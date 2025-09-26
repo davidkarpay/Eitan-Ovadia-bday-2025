@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Eitan Ovadia!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: #f6f8fa;
+        color: #24292e;
+        line-height: 1.5;
+        min-height: 100vh;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #0366d6 0%, #0860ca 100%);
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        animation: slideDown 0.6s ease;
+    }
+    
+    .birthday-badge {
+        display: inline-block;
+        background: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+    }
+    
+    .name {
+        font-size: 2.5em;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .subtitle {
+        color: #c8e1ff;
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+    
+    .role-badges {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+    }
+    
+    .section-title {
+        font-size: 1.5em;
+        margin: 40px 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e1e4e8;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .stat-card {
+        background: white;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        animation: fadeIn 0.8s ease forwards;
+        opacity: 0;
+    }
+    
+    .stat-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+    
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    .stat-card:nth-child(5) { animation-delay: 0.5s; }
+    .stat-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    .stat-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .stat-icon {
+        font-size: 1.8em;
+    }
+    
+    .stat-title {
+        font-weight: 600;
+        color: #24292e;
+    }
+    
+    .stat-value {
+        font-size: 2em;
+        color: #0366d6;
+        font-weight: 700;
+        font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+        margin: 10px 0;
+    }
+    
+    .stat-description {
+        color: #586069;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background: #e1e4e8;
+        border-radius: 4px;
+        margin-top: 12px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #28a745, #2ea44f);
+        border-radius: 4px;
+        animation: fillBar 1.5s ease forwards;
+    }
+    
+    .fun-facts-section {
+        background: white;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .fact-list {
+        list-style: none;
+    }
+    
+    .fact-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 16px;
+        margin: 12px 0;
+        background: #f6f8fa;
+        border-left: 4px solid #0366d6;
+        border-radius: 6px;
+        animation: slideInLeft 0.8s ease forwards;
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    
+    .fact-item:nth-child(1) { animation-delay: 0.7s; }
+    .fact-item:nth-child(2) { animation-delay: 0.9s; }
+    .fact-item:nth-child(3) { animation-delay: 1.1s; }
+    .fact-item:nth-child(4) { animation-delay: 1.3s; }
+    .fact-item:nth-child(5) { animation-delay: 1.5s; }
+    .fact-item:nth-child(6) { animation-delay: 1.7s; }
+    
+    .fact-icon {
+        font-size: 1.5em;
+        margin-right: 16px;
+        flex-shrink: 0;
+    }
+    
+    .fact-text {
+        color: #24292e;
+        line-height: 1.6;
+    }
+    
+    .backup-visualization {
+        background: white;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .backup-flow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    
+    .backup-node {
+        padding: 15px 20px;
+        background: #0366d6;
+        color: white;
+        border-radius: 8px;
+        font-weight: 500;
+        animation: bounceIn 1s ease;
+    }
+    
+    .backup-arrow {
+        font-size: 2em;
+        color: #0366d6;
+        animation: pulse 2s infinite;
+    }
+    
+    .celebration-footer {
+        background: linear-gradient(135deg, #6f42c1 0%, #0366d6 100%);
+        color: white;
+        text-align: center;
+        padding: 40px;
+        border-radius: 10px;
+        margin-top: 40px;
+    }
+    
+    .cake-icon {
+        font-size: 4em;
+        animation: bounce 2s infinite;
+        margin: 20px 0;
+    }
+    
+    .footer-message {
+        font-size: 1.2em;
+        line-height: 1.8;
+        margin-top: 20px;
+    }
+    
+    .confetti {
+        position: fixed;
+        font-size: 2em;
+        animation: fall linear infinite;
+    }
+    
+    .confetti:nth-child(1) { left: 10%; animation-duration: 3s; top: -10%; animation-delay: 0s; }
+    .confetti:nth-child(2) { left: 30%; animation-duration: 3.5s; top: -10%; animation-delay: 0.5s; }
+    .confetti:nth-child(3) { left: 50%; animation-duration: 3.2s; top: -10%; animation-delay: 1s; }
+    .confetti:nth-child(4) { left: 70%; animation-duration: 3.8s; top: -10%; animation-delay: 1.5s; }
+    .confetti:nth-child(5) { left: 90%; animation-duration: 3.3s; top: -10%; animation-delay: 2s; }
+    
+    @keyframes slideDown {
+        from { transform: translateY(-30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+        to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes fillBar {
+        from { width: 0; }
+        to { width: var(--fill-width, 100%); }
+    }
+    
+    @keyframes bounceIn {
+        0% { transform: scale(0.3); opacity: 0; }
+        50% { transform: scale(1.05); }
+        70% { transform: scale(0.9); }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.9; }
+    }
+    
+    @keyframes fall {
+        to { transform: translateY(120vh) rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+        .name { font-size: 1.8em; }
+        .stats-grid { grid-template-columns: 1fr; }
+        .backup-flow { flex-direction: column; }
+        .backup-arrow { transform: rotate(90deg); }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="birthday-badge">🎉 BIRTHDAY CELEBRATION MODE ACTIVE</span>
+            <h1 class="name">EITAN OVADIA</h1>
+            <p class="subtitle">In-House Counsel Extraordinaire • REIT Legal Champion • Backup Enthusiast</p>
+            <div class="role-badges">
+                <span class="badge">📊 REIT Expert</span>
+                <span class="badge">🏢 Real Estate Law</span>
+                <span class="badge">👨‍👧‍👦 Dad × 3</span>
+                <span class="badge">📁 Backup Master</span>
+                <span class="badge">🌴 Boca Raton Based</span>
+            </div>
+        </div>
+
+```
+    <h2 class="section-title">📊 Eitan's Performance Metrics</h2>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">🏢</span>
+                <span class="stat-title">REIT Transactions Mastered</span>
+            </div>
+            <div class="stat-value">1,247</div>
+            <p class="stat-description">Property acquisitions, dispositions, and joint ventures executed flawlessly</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 95%;"></div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">💾</span>
+                <span class="stat-title">Backup Redundancy Level</span>
+            </div>
+            <div class="stat-value">5x</div>
+            <p class="stat-description">Cloud, local, external drive, email, and printed hard copy - because you never know!</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 100%;"></div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">📈</span>
+                <span class="stat-title">Portfolio Value Protected</span>
+            </div>
+            <div class="stat-value">$2.3B+</div>
+            <p class="stat-description">Total real estate assets under legal supervision</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 88%;"></div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">⚡</span>
+                <span class="stat-title">Contract Review Speed</span>
+            </div>
+            <div class="stat-value">47 WPM</div>
+            <p class="stat-description">Words per minute of legalese processed while juggling three kids' schedules</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 92%;"></div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">☕</span>
+                <span class="stat-title">Coffee Dependency Index</span>
+            </div>
+            <div class="stat-value">CRITICAL</div>
+            <p class="stat-description">Essential for lease negotiations and morning school runs</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 100%;"></div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <span class="stat-icon">🎯</span>
+                <span class="stat-title">Dad Joke Accuracy</span>
+            </div>
+            <div class="stat-value">98.7%</div>
+            <p class="stat-description">Guaranteed eye rolls from kids and colleagues alike</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="--fill-width: 98.7%;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <h2 class="section-title">💾 The Legendary Backup Strategy</h2>
+    
+    <div class="backup-visualization">
+        <p style="color: #586069; margin-bottom: 20px;">Eitan's work product survival strategy:</p>
+        <div class="backup-flow">
+            <div class="backup-node">Original Doc</div>
+            <span class="backup-arrow">→</span>
+            <div class="backup-node">OneDrive</div>
+            <span class="backup-arrow">→</span>
+            <div class="backup-node">Dropbox</div>
+            <span class="backup-arrow">→</span>
+            <div class="backup-node">USB Drive</div>
+            <span class="backup-arrow">→</span>
+            <div class="backup-node">Email to Self</div>
+        </div>
+        <p style="color: #0366d6; font-weight: 600; margin-top: 20px;">
+            "If it's not backed up in at least 3 places, does it even exist?" - Eitan, probably
+        </p>
+    </div>
+    
+    <h2 class="section-title">🎂 Birthday Fun Facts</h2>
+    
+    <div class="fun-facts-section">
+        <ul class="fact-list">
+            <li class="fact-item">
+                <span class="fact-icon">🏗️</span>
+                <span class="fact-text">Has reviewed more commercial leases than his kids have asked "Why?" - and that's saying something!</span>
+            </li>
+            <li class="fact-item">
+                <span class="fact-icon">📋</span>
+                <span class="fact-text">Can recite REIT tax regulations in his sleep (his wife can confirm this actually happens)</span>
+            </li>
+            <li class="fact-item">
+                <span class="fact-icon">💼</span>
+                <span class="fact-text">Holds the office record for "Most Versions of the Same Document Saved" - currently at v47_FINAL_FINAL_REALLY_FINAL</span>
+            </li>
+            <li class="fact-item">
+                <span class="fact-icon">🏠</span>
+                <span class="fact-text">Can calculate cap rates while simultaneously helping with homework and planning dinner</span>
+            </li>
+            <li class="fact-item">
+                <span class="fact-icon">🚗</span>
+                <span class="fact-text">Masters the art of due diligence reviews during soccer practice pickup lines</span>
+            </li>
+            <li class="fact-item">
+                <span class="fact-icon">🌴</span>
+                <span class="fact-text">Only person in Boca who gets genuinely excited about new backup storage solutions</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="celebration-footer">
+        <div class="cake-icon">🎂</div>
+        <h2 style="font-size: 2em; margin-bottom: 20px;">Happy Birthday, Eitan!</h2>
+        <div class="footer-message">
+            May your REITs always appreciate, your backups never fail,<br>
+            your coffee always be strong, and your kids' bedtime always be smooth!<br><br>
+            Here's to another year of protecting portfolios, perfecting redundancy,<br>
+            and proving that in-house counsel can indeed have it all!<br><br>
+            <strong style="font-size: 1.1em;">🎉 From all of us who appreciate your dedication to both legal excellence and data security! 🎉</strong>
+        </div>
+    </div>
+</div>
+
+<div class="confetti">🎊</div>
+<div class="confetti">🎉</div>
+<div class="confetti">🎈</div>
+<div class="confetti">🎊</div>
+<div class="confetti">🎉</div>
+```
+
+</body>
+</html>
